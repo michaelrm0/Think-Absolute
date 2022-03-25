@@ -1,0 +1,804 @@
+﻿  drop database if exists bdbibliovirtual;
+create database bdbibliovirtual;
+use bdbibliovirtual;
+
+CREATE TABLE paises
+(
+	CodPais int primary key auto_increment,
+	IsoPais char(2) COLLATE utf8_unicode_ci not null,
+	NombPais varchar(80) not null
+);
+ 
+INSERT INTO `PAISES` VALUES(1, 'AF', 'AFGANISTÁN');
+INSERT INTO `PAISES` VALUES(2, 'AX', 'ISLAS GLAND');
+INSERT INTO `PAISES` VALUES(3, 'AL', 'ALBANIA');
+INSERT INTO `PAISES` VALUES(4, 'DE', 'ALEMANIA');
+INSERT INTO `PAISES` VALUES(5, 'AD', 'ANDORRA');
+INSERT INTO `PAISES` VALUES(6, 'AO', 'ANGOLA');
+INSERT INTO `PAISES` VALUES(7, 'AI', 'ANGUILLA');
+INSERT INTO `PAISES` VALUES(8, 'AQ', 'ANTÁRTIDA');
+INSERT INTO `PAISES` VALUES(9, 'AG', 'ANTIGUA Y BARBUDA');
+INSERT INTO `PAISES` VALUES(10, 'AN', 'ANTILLAS HOLANDESAS');
+INSERT INTO `PAISES` VALUES(11, 'SA', 'ARABIA SAUDÍ');
+INSERT INTO `PAISES` VALUES(12, 'DZ', 'ARGELIA');
+INSERT INTO `PAISES` VALUES(13, 'AR', 'ARGENTINA');
+INSERT INTO `PAISES` VALUES(14, 'AM', 'ARMENIA');
+INSERT INTO `PAISES` VALUES(15, 'AW', 'ARUBA');
+INSERT INTO `PAISES` VALUES(16, 'AU', 'AUSTRALIA');
+INSERT INTO `PAISES` VALUES(17, 'AT', 'AUSTRIA');
+INSERT INTO `PAISES` VALUES(18, 'AZ', 'AZERBAIYÁN');
+INSERT INTO `PAISES` VALUES(19, 'BS', 'BAHAMAS');
+INSERT INTO `PAISES` VALUES(20, 'BH', 'BAHRÉIN');
+INSERT INTO `PAISES` VALUES(21, 'BD', 'BANGLADESH');
+INSERT INTO `PAISES` VALUES(22, 'BB', 'BARBADOS');
+INSERT INTO `PAISES` VALUES(23, 'BY', 'BIELORRUSIA');
+INSERT INTO `PAISES` VALUES(24, 'BE', 'BÉLGICA');
+INSERT INTO `PAISES` VALUES(25, 'BZ', 'BELICE');
+INSERT INTO `PAISES` VALUES(26, 'BJ', 'BENIN');
+INSERT INTO `PAISES` VALUES(27, 'BM', 'BERMUDAS');
+INSERT INTO `PAISES` VALUES(28, 'BT', 'BHUTÁN');
+INSERT INTO `PAISES` VALUES(29, 'BO', 'BOLIVIA');
+INSERT INTO `PAISES` VALUES(30, 'BA', 'BOSNIA Y HERZEGOVINA');
+INSERT INTO `PAISES` VALUES(31, 'BW', 'BOTSUANA');
+INSERT INTO `PAISES` VALUES(32, 'BV', 'ISLA BOUVET');
+INSERT INTO `PAISES` VALUES(33, 'BR', 'BRASIL');
+INSERT INTO `PAISES` VALUES(34, 'BN', 'BRUNÉI');
+INSERT INTO `PAISES` VALUES(35, 'BG', 'BULGARIA');
+INSERT INTO `PAISES` VALUES(36, 'BF', 'BURKINA FASO');
+INSERT INTO `PAISES` VALUES(37, 'BI', 'BURUNDI');
+INSERT INTO `PAISES` VALUES(38, 'CV', 'CABO VERDE');
+INSERT INTO `PAISES` VALUES(39, 'KY', 'ISLAS CAIMÁN');
+INSERT INTO `PAISES` VALUES(40, 'KH', 'CAMBOYA');
+INSERT INTO `PAISES` VALUES(41, 'CM', 'CAMERÚN');
+INSERT INTO `PAISES` VALUES(42, 'CA', 'CANADÁ');
+INSERT INTO `PAISES` VALUES(43, 'CF', 'REPÚBLICA CENTROAFRICANA');
+INSERT INTO `PAISES` VALUES(44, 'TD', 'CHAD');
+INSERT INTO `PAISES` VALUES(45, 'CZ', 'REPÚBLICA CHECA');
+INSERT INTO `PAISES` VALUES(46, 'CL', 'CHILE');
+INSERT INTO `PAISES` VALUES(47, 'CN', 'CHINA');
+INSERT INTO `PAISES` VALUES(48, 'CY', 'CHIPRE');
+INSERT INTO `PAISES` VALUES(49, 'CX', 'ISLA DE NAVIDAD');
+INSERT INTO `PAISES` VALUES(50, 'VA', 'CIUDAD DEL VATICANO');
+INSERT INTO `PAISES` VALUES(51, 'CC', 'ISLAS COCOS');
+INSERT INTO `PAISES` VALUES(52, 'CO', 'COLOMBIA');
+INSERT INTO `PAISES` VALUES(53, 'KM', 'COMORAS');
+INSERT INTO `PAISES` VALUES(54, 'CD', 'REPÚBLICA DEMOCRÁTICA DEL CONGO');
+INSERT INTO `PAISES` VALUES(55, 'CG', 'CONGO');
+INSERT INTO `PAISES` VALUES(56, 'CK', 'ISLAS COOK');
+INSERT INTO `PAISES` VALUES(57, 'KP', 'COREA DEL NORTE');
+INSERT INTO `PAISES` VALUES(58, 'KR', 'COREA DEL SUR');
+INSERT INTO `PAISES` VALUES(59, 'CI', 'COSTA DE MARFIL');
+INSERT INTO `PAISES` VALUES(60, 'CR', 'COSTA RICA');
+INSERT INTO `PAISES` VALUES(61, 'HR', 'CROACIA');
+INSERT INTO `PAISES` VALUES(62, 'CU', 'CUBA');
+INSERT INTO `PAISES` VALUES(63, 'DK', 'DINAMARCA');
+INSERT INTO `PAISES` VALUES(64, 'DM', 'DOMINICA');
+INSERT INTO `PAISES` VALUES(65, 'DO', 'REPÚBLICA DOMINICANA');
+INSERT INTO `PAISES` VALUES(66, 'EC', 'ECUADOR');
+INSERT INTO `PAISES` VALUES(67, 'EG', 'EGIPTO');
+INSERT INTO `PAISES` VALUES(68, 'SV', 'EL SALVADOR');
+INSERT INTO `PAISES` VALUES(69, 'AE', 'EMIRATOS ÁRABES UNIDOS');
+INSERT INTO `PAISES` VALUES(70, 'ER', 'ERITREA');
+INSERT INTO `PAISES` VALUES(71, 'SK', 'ESLOVAQUIA');
+INSERT INTO `PAISES` VALUES(72, 'SI', 'ESLOVENIA');
+INSERT INTO `PAISES` VALUES(73, 'ES', 'ESPAÑA');
+INSERT INTO `PAISES` VALUES(74, 'UM', 'ISLAS ULTRAMARINAS DE ESTADOS UNIDOS');
+INSERT INTO `PAISES` VALUES(75, 'US', 'ESTADOS UNIDOS');
+INSERT INTO `PAISES` VALUES(76, 'EE', 'ESTONIA');
+INSERT INTO `PAISES` VALUES(77, 'ET', 'ETIOPÍA');
+INSERT INTO `PAISES` VALUES(78, 'FO', 'ISLAS FEROE');
+INSERT INTO `PAISES` VALUES(79, 'PH', 'FILIPINAS');
+INSERT INTO `PAISES` VALUES(80, 'FI', 'FINLANDIA');
+INSERT INTO `PAISES` VALUES(81, 'FJ', 'FIYI');
+INSERT INTO `PAISES` VALUES(82, 'FR', 'FRANCIA');
+INSERT INTO `PAISES` VALUES(83, 'GA', 'GABÓN');
+INSERT INTO `PAISES` VALUES(84, 'GM', 'GAMBIA');
+INSERT INTO `PAISES` VALUES(85, 'GE', 'GEORGIA');
+INSERT INTO `PAISES` VALUES(86, 'GS', 'ISLAS GEORGIAS DEL SUR Y SANDWICH DEL SUR');
+INSERT INTO `PAISES` VALUES(87, 'GH', 'GHANA');
+INSERT INTO `PAISES` VALUES(88, 'GI', 'GIBRALTAR');
+INSERT INTO `PAISES` VALUES(89, 'GD', 'GRANADA');
+INSERT INTO `PAISES` VALUES(90, 'GR', 'GRECIA');
+INSERT INTO `PAISES` VALUES(91, 'GL', 'GROENLANDIA');
+INSERT INTO `PAISES` VALUES(92, 'GP', 'GUADALUPE');
+INSERT INTO `PAISES` VALUES(93, 'GU', 'GUAM');
+INSERT INTO `PAISES` VALUES(94, 'GT', 'GUATEMALA');
+INSERT INTO `PAISES` VALUES(95, 'GF', 'GUAYANA FRANCESA');
+INSERT INTO `PAISES` VALUES(96, 'GN', 'GUINEA');
+INSERT INTO `PAISES` VALUES(97, 'GQ', 'GUINEA ECUATORIAL');
+INSERT INTO `PAISES` VALUES(98, 'GW', 'GUINEA-BISSAU');
+INSERT INTO `PAISES` VALUES(99, 'GY', 'GUYANA');
+INSERT INTO `PAISES` VALUES(100, 'HT', 'HAITÍ');
+INSERT INTO `PAISES` VALUES(101, 'HM', 'ISLAS HEARD Y MCDONALD');
+INSERT INTO `PAISES` VALUES(102, 'HN', 'HONDURAS');
+INSERT INTO `PAISES` VALUES(103, 'HK', 'HONG KONG');
+INSERT INTO `PAISES` VALUES(104, 'HU', 'HUNGRÍA');
+INSERT INTO `PAISES` VALUES(105, 'IN', 'INDIA');
+INSERT INTO `PAISES` VALUES(106, 'ID', 'INDONESIA');
+INSERT INTO `PAISES` VALUES(107, 'IR', 'IRÁN');
+INSERT INTO `PAISES` VALUES(108, 'IQ', 'IRAQ');
+INSERT INTO `PAISES` VALUES(109, 'IE', 'IRLANDA');
+INSERT INTO `PAISES` VALUES(110, 'IS', 'ISLANDIA');
+INSERT INTO `PAISES` VALUES(111, 'IL', 'ISRAEL');
+INSERT INTO `PAISES` VALUES(112, 'IT', 'ITALIA');
+INSERT INTO `PAISES` VALUES(113, 'JM', 'JAMAICA');
+INSERT INTO `PAISES` VALUES(114, 'JP', 'JAPÓN');
+INSERT INTO `PAISES` VALUES(115, 'JO', 'JORDANIA');
+INSERT INTO `PAISES` VALUES(116, 'KZ', 'KAZAJSTÁN');
+INSERT INTO `PAISES` VALUES(117, 'KE', 'KENIA');
+INSERT INTO `PAISES` VALUES(118, 'KG', 'KIRGUISTÁN');
+INSERT INTO `PAISES` VALUES(119, 'KI', 'KIRIBATI');
+INSERT INTO `PAISES` VALUES(120, 'KW', 'KUWAIT');
+INSERT INTO `PAISES` VALUES(121, 'LA', 'LAOS');
+INSERT INTO `PAISES` VALUES(122, 'LS', 'LESOTHO');
+INSERT INTO `PAISES` VALUES(123, 'LV', 'LETONIA');
+INSERT INTO `PAISES` VALUES(124, 'LB', 'LÍBANO');
+INSERT INTO `PAISES` VALUES(125, 'LR', 'LIBERIA');
+INSERT INTO `PAISES` VALUES(126, 'LY', 'LIBIA');
+INSERT INTO `PAISES` VALUES(127, 'LI', 'LIECHTENSTEIN');
+INSERT INTO `PAISES` VALUES(128, 'LT', 'LITUANIA');
+INSERT INTO `PAISES` VALUES(129, 'LU', 'LUXEMBURGO');
+INSERT INTO `PAISES` VALUES(130, 'MO', 'MACAO');
+INSERT INTO `PAISES` VALUES(131, 'MK', 'ARY MACEDONIA');
+INSERT INTO `PAISES` VALUES(132, 'MG', 'MADAGASCAR');
+INSERT INTO `PAISES` VALUES(133, 'MY', 'MALASIA');
+INSERT INTO `PAISES` VALUES(134, 'MW', 'MALAWI');
+INSERT INTO `PAISES` VALUES(135, 'MV', 'MALDIVAS');
+INSERT INTO `PAISES` VALUES(136, 'ML', 'MALÍ');
+INSERT INTO `PAISES` VALUES(137, 'MT', 'MALTA');
+INSERT INTO `PAISES` VALUES(138, 'FK', 'ISLAS MALVINAS');
+INSERT INTO `PAISES` VALUES(139, 'MP', 'ISLAS MARIANAS DEL NORTE');
+INSERT INTO `PAISES` VALUES(140, 'MA', 'MARRUECOS');
+INSERT INTO `PAISES` VALUES(141, 'MH', 'ISLAS MARSHALL');
+INSERT INTO `PAISES` VALUES(142, 'MQ', 'MARTINICA');
+INSERT INTO `PAISES` VALUES(143, 'MU', 'MAURICIO');
+INSERT INTO `PAISES` VALUES(144, 'MR', 'MAURITANIA');
+INSERT INTO `PAISES` VALUES(145, 'YT', 'MAYOTTE');
+INSERT INTO `PAISES` VALUES(146, 'MX', 'MÉXICO');
+INSERT INTO `PAISES` VALUES(147, 'FM', 'MICRONESIA');
+INSERT INTO `PAISES` VALUES(148, 'MD', 'MOLDAVIA');
+INSERT INTO `PAISES` VALUES(149, 'MC', 'MÓNACO');
+INSERT INTO `PAISES` VALUES(150, 'MN', 'MONGOLIA');
+INSERT INTO `PAISES` VALUES(151, 'MS', 'MONTSERRAT');
+INSERT INTO `PAISES` VALUES(152, 'MZ', 'MOZAMBIQUE');
+INSERT INTO `PAISES` VALUES(153, 'MM', 'MYANMAR');
+INSERT INTO `PAISES` VALUES(154, 'NA', 'NAMIBIA');
+INSERT INTO `PAISES` VALUES(155, 'NR', 'NAURU');
+INSERT INTO `PAISES` VALUES(156, 'NP', 'NEPAL');
+INSERT INTO `PAISES` VALUES(157, 'NI', 'NICARAGUA');
+INSERT INTO `PAISES` VALUES(158, 'NE', 'NÍGER');
+INSERT INTO `PAISES` VALUES(159, 'NG', 'NIGERIA');
+INSERT INTO `PAISES` VALUES(160, 'NU', 'NIUE');
+INSERT INTO `PAISES` VALUES(161, 'NF', 'ISLA NORFOLK');
+INSERT INTO `PAISES` VALUES(162, 'NO', 'NORUEGA');
+INSERT INTO `PAISES` VALUES(163, 'NC', 'NUEVA CALEDONIA');
+INSERT INTO `PAISES` VALUES(164, 'NZ', 'NUEVA ZELANDA');
+INSERT INTO `PAISES` VALUES(165, 'OM', 'OMÁN');
+INSERT INTO `PAISES` VALUES(166, 'NL', 'PAÍSES BAJOS');
+INSERT INTO `PAISES` VALUES(167, 'PK', 'PAKISTÁN');
+INSERT INTO `PAISES` VALUES(168, 'PW', 'PALAU');
+INSERT INTO `PAISES` VALUES(169, 'PS', 'PALESTINA');
+INSERT INTO `PAISES` VALUES(170, 'PA', 'PANAMÁ');
+INSERT INTO `PAISES` VALUES(171, 'PG', 'PAPÚA NUEVA GUINEA');
+INSERT INTO `PAISES` VALUES(172, 'PY', 'PARAGUAY');
+INSERT INTO `PAISES` VALUES(173, 'PE', 'PERÚ');
+INSERT INTO `PAISES` VALUES(174, 'PN', 'ISLAS PITCAIRN');
+INSERT INTO `PAISES` VALUES(175, 'PF', 'POLINESIA FRANCESA');
+INSERT INTO `PAISES` VALUES(176, 'PL', 'POLONIA');
+INSERT INTO `PAISES` VALUES(177, 'PT', 'PORTUGAL');
+INSERT INTO `PAISES` VALUES(178, 'PR', 'PUERTO RICO');
+INSERT INTO `PAISES` VALUES(179, 'QA', 'QATAR');
+INSERT INTO `PAISES` VALUES(180, 'GB', 'REINO UNIDO');
+INSERT INTO `PAISES` VALUES(181, 'RE', 'REUNIÓN');
+INSERT INTO `PAISES` VALUES(182, 'RW', 'RUANDA');
+INSERT INTO `PAISES` VALUES(183, 'RO', 'RUMANIA');
+INSERT INTO `PAISES` VALUES(184, 'RU', 'RUSIA');
+INSERT INTO `PAISES` VALUES(185, 'EH', 'SAHARA OCCIDENTAL');
+INSERT INTO `PAISES` VALUES(186, 'SB', 'ISLAS SALOMÓN');
+INSERT INTO `PAISES` VALUES(187, 'WS', 'SAMOA');
+INSERT INTO `PAISES` VALUES(188, 'AS', 'SAMOA AMERICANA');
+INSERT INTO `PAISES` VALUES(189, 'KN', 'SAN CRISTÓBAL Y NEVIS');
+INSERT INTO `PAISES` VALUES(190, 'SM', 'SAN MARINO');
+INSERT INTO `PAISES` VALUES(191, 'PM', 'SAN PEDRO Y MIQUELÓN');
+INSERT INTO `PAISES` VALUES(192, 'VC', 'SAN VICENTE Y LAS GRANADINAS');
+INSERT INTO `PAISES` VALUES(193, 'SH', 'SANTA HELENA');
+INSERT INTO `PAISES` VALUES(194, 'LC', 'SANTA LUCÍA');
+INSERT INTO `PAISES` VALUES(195, 'ST', 'SANTO TOMÉ Y PRÍNCIPE');
+INSERT INTO `PAISES` VALUES(196, 'SN', 'SENEGAL');
+INSERT INTO `PAISES` VALUES(197, 'CS', 'SERBIA Y MONTENEGRO');
+INSERT INTO `PAISES` VALUES(198, 'SC', 'SEYCHELLES');
+INSERT INTO `PAISES` VALUES(199, 'SL', 'SIERRA LEONA');
+INSERT INTO `PAISES` VALUES(200, 'SG', 'SINGAPUR');
+INSERT INTO `PAISES` VALUES(201, 'SY', 'SIRIA');
+INSERT INTO `PAISES` VALUES(202, 'SO', 'SOMALIA');
+INSERT INTO `PAISES` VALUES(203, 'LK', 'SRI LANKA');
+INSERT INTO `PAISES` VALUES(204, 'SZ', 'SUAZILANDIA');
+INSERT INTO `PAISES` VALUES(205, 'ZA', 'SUDÁFRICA');
+INSERT INTO `PAISES` VALUES(206, 'SD', 'SUDÁN');
+INSERT INTO `PAISES` VALUES(207, 'SE', 'SUECIA');
+INSERT INTO `PAISES` VALUES(208, 'CH', 'SUIZA');
+INSERT INTO `PAISES` VALUES(209, 'SR', 'SURINAM');
+INSERT INTO `PAISES` VALUES(210, 'SJ', 'SVALBARD Y JAN MAYEN');
+INSERT INTO `PAISES` VALUES(211, 'TH', 'TAILANDIA');
+INSERT INTO `PAISES` VALUES(212, 'TW', 'TAIWÁN');
+INSERT INTO `PAISES` VALUES(213, 'TZ', 'TANZANIA');
+INSERT INTO `PAISES` VALUES(214, 'TJ', 'TAYIKISTÁN');
+INSERT INTO `PAISES` VALUES(215, 'IO', 'TERRITORIO BRITÁNICO DEL OCÉANO ÍNDICO');
+INSERT INTO `PAISES` VALUES(216, 'TF', 'TERRITORIOS AUSTRALES FRANCESES');
+INSERT INTO `PAISES` VALUES(217, 'TL', 'TIMOR ORIENTAL');
+INSERT INTO `PAISES` VALUES(218, 'TG', 'TOGO');
+INSERT INTO `PAISES` VALUES(219, 'TK', 'TOKELAU');
+INSERT INTO `PAISES` VALUES(220, 'TO', 'TONGA');
+INSERT INTO `PAISES` VALUES(221, 'TT', 'TRINIDAD Y TOBAGO');
+INSERT INTO `PAISES` VALUES(222, 'TN', 'TÚNEZ');
+INSERT INTO `PAISES` VALUES(223, 'TC', 'ISLAS TURCAS Y CAICOS');
+INSERT INTO `PAISES` VALUES(224, 'TM', 'TURKMENISTÁN');
+INSERT INTO `PAISES` VALUES(225, 'TR', 'TURQUÍA');
+INSERT INTO `PAISES` VALUES(226, 'TV', 'TUVALU');
+INSERT INTO `PAISES` VALUES(227, 'UA', 'UCRANIA');
+INSERT INTO `PAISES` VALUES(228, 'UG', 'UGANDA');
+INSERT INTO `PAISES` VALUES(229, 'UY', 'URUGUAY');
+INSERT INTO `PAISES` VALUES(230, 'UZ', 'UZBEKISTÁN');
+INSERT INTO `PAISES` VALUES(231, 'VU', 'VANUATU');
+INSERT INTO `PAISES` VALUES(232, 'VE', 'VENEZUELA');
+INSERT INTO `PAISES` VALUES(233, 'VN', 'VIETNAM');
+INSERT INTO `PAISES` VALUES(234, 'VG', 'ISLAS VÍRGENES BRITÁNICAS');
+INSERT INTO `PAISES` VALUES(235, 'VI', 'ISLAS VÍRGENES DE LOS ESTADOS UNIDOS');
+INSERT INTO `PAISES` VALUES(236, 'WF', 'WALLIS Y FUTUNA');
+INSERT INTO `PAISES` VALUES(237, 'YE', 'YEMEN');
+INSERT INTO `PAISES` VALUES(238, 'DJ', 'YIBUTI');
+INSERT INTO `PAISES` VALUES(239, 'ZM', 'ZAMBIA');
+INSERT INTO `PAISES` VALUES(240, 'ZW', 'ZIMBABUE');
+
+create table provincia
+(
+	CodProv int primary key auto_increment,
+	NombProv varchar(50) not null,
+	EstProv char(1) not null default 'A'
+);
+
+insert into provincia (NombProv) values
+('PROVINCIA CONSTITUCIONAL DEL CALLAO'),
+('LIMA'),
+('BARRANCA'),
+('CAJATAMBO'),
+('CANTA'),
+('CA&Ntilde;ETE'),
+('HUARAL'),
+('HUAROCHIR&Iacute;'),
+('HUARA'),
+('OY&Oacute;N'),
+('YAUYOS');
+
+create table distrito
+(
+	CodProv int not null,
+	CodDist int primary key auto_increment,
+	NombDist varchar(50) not null,
+	EstDist char(1) not null default 'A',
+	foreign key(CodProv) references provincia(CodProv)
+);
+
+
+insert into distrito(CodProv,NombDist) values
+(1,'BELLAVISTA'),
+(1,'CALLAO(CERCADO)'),
+(1,'CARMEN DE LA LEGUA-REYNOSO'),
+(1,'LA PERLA'),
+(1,'LA PUNTA'),
+(1,'MI PER&Uacute;'),
+(1,'VENTANILLA'),
+(2,'LIMA'),
+(2,'ANC&Oacute;N'),
+(2,'ATE'),
+(2,'BARRANCO'),
+(2,'BRE&Ntilde;A'),
+(2,'CARABAYLLO'),
+(2,'CHACLACAYO'),
+(2,'CHORILLOS'),
+(2,'CIENEGUILLA'),
+(2,'COMAS'),
+(2,'EL AGUSTINO'),
+(2,'INDEPENDENCIA'),
+(2,'JES&Uacute;S MAR&Iacute;A'),
+(2,'LA MOLINA'),
+(2,'LA VICTORIA'),
+(2,'LINCE'),
+(2,'LOS OLIVOS'),
+(2,'LURIGANCHO-CHOSICA'),
+(2,'LUR&Iacute;N'),
+(2,'MAGDALENA DEL MAR'),
+(2,'MIRAFLORES'),
+(2,'PUEBLO LIBRE'),
+(2,'PACHACAM&Aacute;C'),
+(2,'PUCUSANA'),
+(2,'PUENTE PIEDRA'),
+(2,'PUNTA HERMOSA'),
+(2,'PUNTA NEGRA'),
+(2,'R&Iacute;MAC'),
+(2,'SAN BARTOLO'),
+(2,'SAN BORJA'),
+(2,'SAN ISIDRO'),
+(2,'SAN JUAN DE LURIGANCHO'),
+(2,'SAN JUAN DE MIRAFLORES'),
+(2,'SAN LUIS'),
+(2,'SAN MART&Iacute;N DE PORRES'),
+(2,'SAN MIGUEL'),
+(2,'SANTA ANITA'),
+(2,'SANTA MAR&Iacute;A DEL MAR'),
+(2,'SANTA ROSA'),
+(2,'SANTIAGO DE SURCO'),
+(2,'SURQUILLO'),
+(2,'VILLA EL SALVADOR'),
+(2,'VILLA MAR&Iacute;A DEL TRIUNFO');
+
+create table direccion
+(
+	CodDist int default null,
+	CodDir int primary key auto_increment,
+	DescDir varchar(200) default null,
+	EstDir char(1) default 'A',
+	foreign key(CodDist) references distrito(CodDist)
+);
+
+create table sexo
+(
+	CodSex int primary key auto_increment,
+    DescSex varchar(15) not null,
+    EstSex char(1) not null default 'A'
+);
+
+
+insert into sexo(DescSex) values('MASCULINO');/*Masculino , Femenino, Indeterminado*/
+insert into sexo(DescSex) values('FEMENINO');
+insert into sexo(DescSex) values('INDETERMINADO');
+
+
+create table tipo_usuario
+(
+	CodTip int primary key auto_increment,
+    DescTip char(20) not null,
+    EstTip char(1) not null default 'A'
+);
+
+insert into tipo_usuario(DescTip) values('ESTUDIANTE');
+insert into tipo_usuario(DescTip) values('DOCENTE');
+insert into tipo_usuario(DescTip) values('BIBLIOTECARIO');
+insert into tipo_usuario(DescTip) values('ADMINISTRADOR');
+
+create table usuario
+(
+	CodUsu int primary key auto_increment,
+	Usuario varchar(50) not null unique,
+	Clave varchar(50) not null,
+	CodTip int(1) not null,
+	EstUsu char(1) not null default 'A',
+	foreign key(CodTip) references tipo_usuario(CodTip)
+);
+
+create table estado_civil
+(
+	CodEC int primary key auto_increment,
+    DescEC varchar(15) not null,
+    EstEC char(1) not null default 'A'
+);
+
+insert into estado_civil(DescEC) values('SOLTERO(A)');
+insert into estado_civil(DescEC) values('CASADO(A)');
+insert into estado_civil(DescEC) values('VIUDO(A)');
+insert into estado_civil(DescEC) values('DIVORCIADO(A)');
+
+
+create table autor
+(
+	CodAut int primary key auto_increment,
+    NombAut varchar(200) not null    
+);
+
+create table categorias
+(
+	CodCat int primary key auto_increment,
+    DescCat varchar(200) not null,
+    EstCat char(1) default 'A'
+);
+
+INSERT INTO categorias (DescCat) VALUES
+('ART&Iacute;CULO'),
+('BOLET&Iacute;N'),
+('CAT&Aacute;LOGO'),
+('FOLLETO'),
+('INFORME PRE-PROFESIONAL'),
+('LIBRO'),
+('MANUAL'),
+('MEMORIA'),
+('MULTIMEDIA'),
+('PLANO'),
+('REFERENCIA'),
+('REVISTA'),
+('SOLUCIONARIO'),
+('TESINA'),
+('TESIS PROFESIONAL'),
+('TESIS DE DOCTORADO'),
+('TESIS DE MAESTR&Iacute;A'),
+('TRABAJO DE INVESTIGACI&Oacute;N'),
+('MANUALES DE USUARIO'),
+('INFORMES ACTUALES'),
+('PROYECTOS DE CONSULTOR&Iacute;A');
+
+create table libros
+(
+    CodLib int primary key auto_increment,
+    AnioLib int(4) not null,
+    TitLib varchar(200) not null,
+    EditLib varchar(100) not null,
+    PaisLib int not null,
+    isbnLib varchar(250) not null unique,
+    CodCat int not null,
+    EstLib char(1) not null default 'A',
+    foreign key(CodCat) references categorias(CodCat),
+    foreign key(PaisLib) references paises(CodPais)  
+);
+
+create table autores_libros
+(
+	CodAut int not null,
+    CodLib int not null,
+    EstAutLib char(1) not null default 'A',
+    primary key(CodAut,CodLib),
+    foreign key(CodAut) references autor(CodAut),
+    foreign key(CodLib) references libros(CodLib)
+);
+
+
+
+create table facultad
+(
+	CodFacu int primary key auto_increment,
+	NombFacu varchar(150) not null,
+	EstFacu char(1) not null default 'A'
+);
+
+
+INSERT INTO facultad(NombFacu) VALUES
+('FACULTAD DE ARQUITECTURA Y URBANISMO'),
+('FACULTAD DE INGENIER&Iacute;A CIVIL'),
+('FACULTAD DE INGENIER&Iacute;A INDUSTRIAL Y DE SISTEMAS'),
+('FACULTAD DE OCEANOGRAF&Iacute;A, PESQUER&Iacute;A, CIENCIAS ALIMENTARIAS Y ACUICULTURA'),
+('FACULTAD DE INGENIER&Iacute;A GEOGR&Aacute;FICA, AMBIENTAL Y ECOTURISMO'),
+('FACULTAD DE INGENIER&Iacute;A ELECTR&Oacute;NICA E INFORM&Aacute;TICA '),
+('FACULTAD DE CIENCIAS ECON&Oacute;MICAS'),
+('FACULTAD DE CIENCIAS NATURALES Y MATEM&Aacute;TICA'),
+('FACULTAD DE DERECHO Y CIENCIA POL&Iacute;TICA'),
+('FACULTAD DE CIENCIAS SOCIALES'),
+('FACULTAD DE HUMANIDADES'),
+('FACULTAD DE PSICOLOG&Iacute;A'),
+('FACULTAD DE EDUCACI&Oacute;N'),
+('FACULTAD DE ADMINISTRACI&Oacute;N'),
+('FACULTAD DE CIENCIAS FINANCIERAS'),
+('FACULTAD DE MEDICINA HIP&Oacute;LITO UNANUE'),
+('FACULTAD DE ODONTOLOG&Iacute;A'),
+('FACULTAD DE TECNOLOG&Iacute;A M&Eacute;DICA');
+
+
+
+create table escuela
+(
+	CodEsc int primary key auto_increment,
+	NombEsc varchar(200) not null,
+	CodFacu int not null,
+	EstEsc char(1) not null default 'A',
+	foreign key(CodFacu) references facultad(CodFacu)
+);
+
+INSERT INTO escuela (NombEsc, CodFacu) VALUES
+('ARQUITECTURA', 1),
+('INGENIER&Iacute;A CIVIL', 2),
+('INGENIER&Iacute;A DE SISTEMAS', 3),
+('INGENIER&Iacute;A INDUSTRIAL', 3),
+('INGENIER&Iacute;A AGROINDUSTRIAL', 3),
+('INGENIER&Iacute;A DE TRANSPORTES', 3),
+('INGENIER&Iacute;A DE ACUICULTURA', 4),
+('INGENIER&Iacute;A ALIMENTARIA', 4),
+('INGENIER&Iacute;A PESQUERA', 4),
+('INGENIER&Iacute;A EN ECOTURISMO', 5),
+('INGENIER&Iacute;A AMBIENTAL', 5),
+('INGENIER&Iacute;A GEOGR&Aacute;FICA', 5),
+('INGENIER&Iacute;A ELECTR&Oacute;NICA', 6),
+('INGENIER&Iacute;A INFORM&Aacute;TICA', 6),
+('INGENIER&Iacute;A DE MECATR&Oacute;NICA', 6),
+('INGENIER&Iacute;A DE TELECOMUNICACIONES', 6),
+('ECONOM&Iacute;A', 7),
+('MATEM&Aacute;TICA', 8),
+('BIOLOG&Iacute;A', 8),
+('QU&Iacute;MICA', 8),
+('F&Iacute;SICA', 8),
+('ESTAD&Iacute;STICA', 8),
+('DERECHO', 9),
+('CIENCIA POL&Iacute;TICA', 9),
+('SOCIOLOG&Iacute;A', 10),
+('TRABAJO SOCIAL', 10),
+('CIENCIAS DE LA COMUNICACI&Oacute;N', 10),
+('FILOSOF&Iacute;A', 11),
+('LINGU&Iacute;STICA', 11),
+('LITERATURA', 11),
+('HISTORIA', 11),
+('ANTROPOLOG&Iacute;A', 11),
+('ARQUEOLOG&Iacute;A', 11),
+('PSICOLOG&Iacute;A', 12),
+('EDUCACI&Oacute;N INICIAL', 13),
+('EDUCACI&Oacute;N PRIMARIA', 13),
+('MATEM&Aacute;TICA - F&Iacute;SICA', 13),
+('LENGUA - LITERATURA', 13),
+('EDUCACI&Oacute;N F&Iacute;SICA', 13),
+('IDIOMAS: INGL&Eacute;S', 13),
+('CIENCIAS HIST&Oacute;RICO SOCIALES', 13),
+('ADMINISTRACI&Oacute;N DE EMPRESAS', 14),
+('ADMINISTRACI&Oacute;N DE TURISMO', 14),
+('NEGOCIOS INTERNACIONALES', 14),
+('ADMINISTRACI&Oacute;N P&Uacute;BLICA', 14),
+('MARKETING', 14),
+('CONTABILIDAD', 15),
+('MEDICINA', 16),
+('ENFERMER&Iacute;A', 16),
+('NUTRICI&Oacute;N', 16),
+('OBSTETRICIA', 16),
+('ODONTOLOG&Iacute;A', 17),
+('LABORATORIO Y ANATOM&Iacute;A PATOL&Oacute;GICA', 18),
+('TERAPIA F&Iacute;SICA Y REHABILITACI&Oacute;N', 18),
+('TERAPIA DE LENGUAJE', 18),
+('RADIOLOG&Iacute;A', 18),
+('OPTOMETR&Iacute;A', 18);
+
+create table persona
+(
+	CodPer int primary key auto_increment,
+	NombPer varchar(100) not null,
+	ApePer varchar(100) not null,	
+	DniPer int(8) not null unique, /*Se cambio de char a int*/
+	TelPer int(9) default null,/*Se agrego este campo*/
+	CorPer varchar(22) not null unique,
+	CodDir int default null,
+	CodEC int default null,
+	CodSex int not null,
+	CodUsu int not null,
+	FecRegPer datetime not null default current_timestamp(),
+	EstPer char(1) not null default 'A',
+	foreign key(CodDir) references direccion(CodDir),
+	foreign key(CodEC) references estado_civil(CodEC),
+	foreign key(CodSex) references sexo(CodSex),	
+	foreign key(CodUsu) references usuario(CodUsu)
+);
+
+create table estudiante
+(
+	CodEst int primary key, 
+	CodPer int not null,
+	CodEsc int not null,
+	EstEst char(1) not null default 'A',
+	/*CodCic int not null,*/
+	foreign key(CodPer) references persona(CodPer),
+	foreign key(CodEsc) references escuela(CodEsc)
+	/*foreign key(CodCic) references ciclo(CodCic)*/
+);
+
+create table prestamo_alumno
+(
+	CodEst int not null,
+	CodLib int not null,
+	FecPres datetime not null,
+	FecDevo date not null,
+	EstPA char(1) not null default 'P', /*Inicialmente estará como P de pendiente luego pasará a E entregado y D de devuelto*/
+	primary key(CodEst,CodLib),
+	foreign key(CodEst) references estudiante(CodEst),
+	foreign key(CodLib) references libros(CodLib)	
+);
+
+create table docente
+(
+	CodDoc int primary key auto_increment,
+	CodPer int not null,	
+	EstDoc char(1) not null default 'A',
+	foreign key(CodPer) references persona(CodPer)
+);
+
+create table prestamo_docente
+(
+	CodDoc int not null,
+	CodLib int not null,
+	FecPres datetime not null,
+	FecDevo date not null,
+	EstPD char(1) not null default 'P', /*Inicialmente estará como P de pendiente luego pasará a E entregado y D de devuelto*/
+	primary key(CodDoc,CodLib),
+	foreign key(CodDoc) references docente(CodDoc),
+	foreign key(CodLib) references libros(CodLib)	
+);
+
+create table bibliotecas
+(
+	CodBibli int primary key auto_increment,
+	NombBibli varchar(100) not null,
+	/*FacuBiblio int not null, (1:1)lo hice foraneo xq tiene como referencia a que escuelas puede dar prestamo*/
+	EstBibli char(1) not null default 'A'
+	/*foreign key(FacuBiblio) references facultad(CodFacu)*/
+);
+
+insert into bibliotecas(NombBibli) values
+('BIBLIOTECA DE ADMINISTRACI&Oacute;N'),
+('BIBLIOTECA DE ARQUITECTURA Y URBANISMO'),
+('BIBLIOTECA CENTRAL'),
+('BIBLIOTECA DE CIENCIAS SOCIALES'),
+('BIBLIOTECA DE CIENCIAS ECON&Oacute;MICAS'),
+('BIBLIOTECA DE CIENCIAS FINANCIERAS Y CONTABLES'),
+('BIBLIOTECA DE CIENCIAS NATURALES Y MATEM&Aacute;TICA'),
+('BIBLIOTECA DE DERECHO Y CIENCIA POL&Iacute;TICA'),
+('BIBLIOTECA DE EDUCACI&Oacute;N'),
+('BIBLIOTECA DE ELECTR&Oacute;NICA E INFORM&Aacute;TICA'),
+('BIBLIOTECA DE EUPG'),
+('BIBLIOTECA DE GEOGR&Aacute;FICA AMBIENTAL Y ECOTURISMO'),
+('BIBLIOTECA DE HUMANIDADES'),
+('BIBLIOTECA DE INDUSTRIAL Y DE SISTEMAS'),
+('BIBLIOTECA DE INGENIER&Iacute;A CIVIL'),
+('BIBLIOTECA DE MEDICINA HIP&Oacute;LITO UNANUE'),
+('BIBLIOTECA DE OCEANOGRAF&Iacute;A, PESQUER&Iacute;A, CIENCIAS ALIMENTARIAS Y ACUICULTURA'),
+('BIBLIOTECA DE ODONTOLOG&Iacute;A'),
+('BIBLIOTECA DE PSICOLOG&Iacute;A'),
+('BIBLIOTECA DE TECNOLOG&Iacute;A M&Eacute;DICA');
+
+create table libro_FacuBiblio
+(
+	CodLib int not null,
+	CodBibli int not null,
+	CantLib int default 0,/*Campo agregado*/
+	UbicacionLib varchar(100),/*Campo agregado*/
+	EstLibFac char(1) not null default 'S', /*Indicara S si hay en stock y N si lo posee otra persona*/
+	primary key(CodLib,CodBibli),
+	foreign key(CodLib) references libros(CodLib),
+	foreign key(CodBibli) references bibliotecas(CodBibli)
+);
+
+create table bibliotecario
+(
+	CodBib int primary key auto_increment,
+	CodPer int not null,
+	CodBibli int not null,
+	EstBibli char(1) not null default 'A',
+	foreign key(CodBibli) references bibliotecas(CodBibli),
+	foreign key(CodPer) references persona(CodPer)
+);
+
+create table administrador
+(
+	CodAd int primary key auto_increment,
+	CodPer int not null,
+	CodBibli int not null,
+	EstAdFac char(1) not null default 'A',
+	foreign key(CodBibli) references bibliotecas(CodBibli),
+	foreign key(CodPer) references persona(CodPer)
+);
+
+
+/*COMENTARIOS*/
+
+insert into usuario(Usuario,Clave,CodTip) values
+('michael','michael',4),
+('miguel','miguel',4),
+('gersson','gersson',4),
+('melissa','melissa',4),
+('ronaldo','ronaldo',3),
+('renzo','renzo',3),
+('dayana','dayana',3),
+('anais','anais',3),
+('petrlik','petrlik',2),
+('lira','lira',2),
+('noemi','noemi',2),
+('giovanna','giovanna',2),
+('antonio','antonio',1),
+('alberto','alberto',1),
+('susana','susana',1),
+('geraldinne','geraldinne',1);
+
+insert into persona(NombPer,ApePer,DniPer,CorPer,CodSex,CodUsu) values
+('MICHELLE GIOVANNI','ROJAS MORALES',73253070,'2017039706@unfv.edu.pe',1,1),
+('MIGUEL ANGEL','SALCEDO BUENDIA',72352335,'2017039235@unfv.edu.pe',1,2),
+('GERSSON ENRIQUE','SALAZAR RAMIREZ',72343535,'2017035241@unfv.edu.pe',1,3),
+('MELISSA','TACO VILLACRESIS',72543335,'2017034455@unfv.edu.pe',2,4),
+('RONALDO','YUPA ARIAS',72235353,'2017454575@unfv.edu.pe',1,5),
+('RENZO','CAMARA ZARATE',72882341,'2017666575@unfv.edu.pe',1,6),
+('DAYANA','GARCIA MANRIQUE',72646342,'2052454575@unfv.edu.pe',2,7),
+('ANAIS','POLICIO SAPAICO',72000235,'2010454575@unfv.edu.pe',2,8),
+('IVAN','PETRLIK AZABACHE',72812032,'2014554575@unfv.edu.pe',1,9),
+('JORGE','LIRA CAMARGO',72024005,'2016434575@unfv.edu.pe',1,10),
+('NOEMI','RAMIREZ SALGADO',72005235,'1990122141@unfv.edu.pe',2,11),
+('GIOVANNA','AVEROS SALINAS',72678765,'2017454115@unfv.edu.pe',2,12),
+('ANTONIO','VILCAS LINARES',72777335,'2017456346@unfv.edu.pe',1,13),
+('ALBERTO','RODAS LOAYZA',72809335,'2017450005@unfv.edu.pe',1,14),
+('SUSANA','SOCA MORALES',72880005,'2017890575@unfv.edu.pe',2,15),
+('GERALDINNE','TANG PUENTE',72098335,'2017568575@unfv.edu.pe',2,16);
+
+
+insert into administrador(CodPer,CodBibli) values 
+(1,3),
+(2,10),
+(3,13),
+(4,17);
+
+insert into bibliotecario(CodPer,CodBibli) values 
+(5,3),
+(6,10),
+(7,13),
+(8,17);
+
+insert into docente(CodPer) values 
+(9),
+(10),
+(11),
+(12);
+
+insert into estudiante(CodEst,CodPer,CodEsc) values 
+(2017456346,13,3),
+(2017450005,14,3),
+(2017890575,15,3),
+(2017568575,16,3);
+
+
+/*COMENTARIOS*/
+/*
+
+insert into usuario(Usuario,Clave,CodTip) values
+('miguel','miguelon',4);
+insert into usuario(Usuario,Clave,CodTip) values
+('gersson','gersson',4);
+insert into usuario(Usuario,Clave,CodTip) values
+('melissa','melissa',3);
+
+insert into administrador(CodPer,CodBibli) values 
+(2,1);
+insert into administrador(CodPer,CodBibli) values 
+(3,16);
+
+insert into persona(NombPer,ApePer,DniPer,CorPer,CodSex,CodUsu) values
+('MIGUEL ANGEL','SALCEDO BUENDIA',72352335,'2017039235@unfv.edu.pe',1,2);
+insert into persona(NombPer,ApePer,DniPer,CorPer,CodSex,CodUsu) values
+('GERSSON ENRIQUE','SALAZAR RAMIREZ',72343535,'2017035241@unfv.edu.pe',1,3);
+insert into persona(NombPer,ApePer,DniPer,CorPer,CodSex,CodUsu) values
+('MELISSA','TACO VILLACRESIS',72543335,'2017034455@unfv.edu.pe',1,4);
+
+select b.NombBibli,p.Nombres,p.ApePat,p.ApeMat,u.Usuario,u.Clave,tp.CodTip,tp.DescTip,u.EstUsu
+from persona p
+inner join usuario u 
+on p.CodUsu = u.CodUsu
+inner join tipo_usuario tp
+on u.CodTip = tp.CodTip
+inner join administrador a
+on a.CodPer = p.CodPer
+inner join bibliotecas b 
+on a.CodBibli = b.CodBibli
+
+select 'l.TitLib,l.AnioLib,a.NombAut'
+from libros l
+inner join autores_libros au
+on l.CodLib = au.CodLib
+inner join autor a
+on au.CodAut = a.CodAut
+
+insert into autor values(null,'ANONIMO');
+insert into autor values(null,'PANCHISCO VARGAS');
+insert into autor values(null,'MIGUELITO SOLANO');
+insert into autor values(null,'AZISTENGA FIORE');
+
+insert into categorias(CodCat,DescCat) values(null,'TESIS');
+insert into categorias(CodCat,DescCat) values(null,'INGENIERÍA');
+insert into categorias(CodCat,DescCat) values(null,'DERECHO');
+insert into categorias(CodCat,DescCat) values(null,'PSICOLOGÍA');
+
+insert into libros values(null,'1866','LA ERA DEL HACKING','LUMBRERAS','54354AF5ASFA',1);
+insert into libros values(null,'1942','LAGUNAS ARTIFICIALES','UNFV','ASAS3454AF5SFA',1);
+insert into libros values(null,'2014','PLANOS DISTINTOS','BENITO.SA','ASAS345ARFASFA',3);
+insert into libros values(null,'2015','LA MENTE ARTIFICIAL','BENITO.SA','ASAS3454525325',1);
+insert into libros values(null,'2000','LA ÉPOCA DE VIDA','USMP','ASAS3454A54654',2);
+
+insert into autores_libros(CodAut,CodLib) values(1,5);
+insert into autores_libros(CodAut,CodLib) values(1,4);
+insert into autores_libros(CodAut,CodLib) values(3,2);
+insert into autores_libros(CodAut,CodLib) values(2,3);
+insert into autores_libros(CodAut,CodLib) values(2,1);*/

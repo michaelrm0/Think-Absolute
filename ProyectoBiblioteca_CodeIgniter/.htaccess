@@ -1,0 +1,9 @@
+RewriteEngine on 
+RewriteCond $1 !^(index.php|css|pace|bower_components|plugins|dist|assets|fonts|js|robots.txt) 
+RewriteRule ^(.*) index.php/$1 [L]
+
+#Bloqueando el acceso a carpetas sin pagina de index
+Options All -Indexes
+
+#Para redireccionar a páginas de errores personalizados
+ErrorDocument 403 /Errores/403.html
